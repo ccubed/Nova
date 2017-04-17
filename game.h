@@ -22,8 +22,13 @@ public:
     Game(QString path);
     ~Game();
     
+private slots:
+    void relayData(QString text);
+    void startGame();
+    void stopGame();
+    
 private:
-    Connection sock;
+    Connection conn;
     QHash<QString, QVariant> config;
     
 };

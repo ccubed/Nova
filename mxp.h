@@ -19,7 +19,6 @@ class Mxp{
     
 public:
     Mxp();
-    Mxp(Connection socket);
     ~Mxp();
     bool Process(QByteArray data);
     QVariant get(QString what);

@@ -18,7 +18,6 @@ class Msp{
     
 public:
     Msp();
-    Msp(Connection socket);
     ~Msp();
     bool Process(QByteArray data);
     

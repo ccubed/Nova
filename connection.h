@@ -14,18 +14,27 @@
 #include "msp.h"
 #include "game.h"
 #include <QTcpSocket>
-#include <QSslSocket>
 
 class Connection{
     
 public:
-    Connection();
-    Connection(Game instance);
+    Connection(QString host, int port, bool mxp, bool msp, bool ssl);
     ~Connection();
+    bool connect();
+    bool isConnected();
+    void send(QString data);
+    void disconnect();
     
 private:
     Mxp protoMxp;
     Msp protoMsp;
+    struct{
+        
+        QString hostname;
+        int port;
+        
+    }hostinfo;
+    QTcpSocket socket;
     
 };
 
